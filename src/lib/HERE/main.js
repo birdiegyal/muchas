@@ -4,8 +4,8 @@ const latLngToTileTMS = require('./utils')
 
 // DEFAULTS: 
 // const appId = process.env.app_id
-const apiKey = process.env.api_key
-const baseUrl = process.env.base_url
+const apiKey = import.meta.env.VITE_HERE_API_KEY
+const baseUrl = import.meta.env.VITE_HERE_ENDPOINT
 
 // SECTION:  
 // merchant location.
