@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer utilities {
-    .common-container {
-        @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md: px-8 lg:p-14 custom-scrollbar;
-    }
-} */
-
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -43,21 +37,39 @@
     }
 
     .dark {
+        --background: 201,
+            20%,
+            23%;
+        --foreground: 97,
+            13%,
+            80%;
 
-        --muted: 223 47% 11%;
-        --muted-foreground: 215.4 16.3% 56.9%;
+        --muted: 202,
+            20%,
+            32%;
+        --muted-foreground: 98,
+            13%,
+            72%;
 
-        --accent: 216 34% 17%;
-        --accent-foreground: 210 40% 98%;
+        --accent: 201,
+            20%,
+            20%;
+        --accent-foreground: 99,
+            13%,
+            52%;
 
         --popover: 224 71% 4%;
         --popover-foreground: 215 20.2% 65.1%;
 
-        --card: 224 71% 4%;
+        --card: 186,
+            21%,
+            40%;
         --card-foreground: 213 31% 91%;
 
-        --primary: 210 40% 98%;
-        --primary-foreground: 222.2 47.4% 1.2%;
+        --primary: 203,
+            21%,
+            12%;
+
 
         --secondary: 222.2 47.4% 11.2%;
         --secondary-foreground: 210 40% 98%;
@@ -65,6 +77,15 @@
         --destructive: 0 63% 31%;
         --destructive-foreground: 210 40% 98%;
 
+        --border: 165,
+            19%,
+            40%;
+        --input: 201,
+            20%,
+            36%;
+        --ring: 97,
+            13%,
+            80%;
         --radius: 0.5rem;
     }
 }
@@ -78,4 +99,21 @@
         @apply bg-background text-foreground;
         font-feature-settings: "rlig" 1, "calt" 1;
     }
+}
+
+@layer utilities {
+    /* 
+     SECTION: 
+     here we're going to style them shadcn components as well components from formik.
+    */
+
+    .form-input {
+        @apply p-1 rounded-sm bg-input text-[20px] active:ring-2 mb-2 mx-2
+    }
+
+    .form-button {
+        @apply bg-primary text-[20px] active:ring-2 mx-2
+    }
+
+
 }

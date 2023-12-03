@@ -34,8 +34,8 @@
     },
     {
       "type": "text",
-      "version": 418,
-      "versionNonce": 1765711664,
+      "version": 419,
+      "versionNonce": 462940623,
       "isDeleted": false,
       "id": "gtsj03k9KdSmoIct3vLUi",
       "fillStyle": "solid",
@@ -55,7 +55,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1701526634800,
+      "updated": 1701604800932,
       "link": null,
       "locked": false,
       "fontSize": 36,
@@ -66,7 +66,7 @@
       "containerId": null,
       "originalText": "protobufs",
       "lineHeight": 1.25,
-      "baseline": 35
+      "baseline": 32
     },
     {
       "type": "rectangle",
@@ -99,8 +99,8 @@
     },
     {
       "type": "text",
-      "version": 506,
-      "versionNonce": 813906224,
+      "version": 507,
+      "versionNonce": 2039455393,
       "isDeleted": false,
       "id": "3MuKwhNBa1wq3cQUPhd43",
       "fillStyle": "solid",
@@ -120,7 +120,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1701526634800,
+      "updated": 1701604800934,
       "link": null,
       "locked": false,
       "fontSize": 36,
@@ -131,7 +131,7 @@
       "containerId": null,
       "originalText": "geojson",
       "lineHeight": 1.25,
-      "baseline": 35
+      "baseline": 32
     },
     {
       "type": "freedraw",
@@ -627,8 +627,8 @@
     },
     {
       "type": "text",
-      "version": 301,
-      "versionNonce": 405050160,
+      "version": 302,
+      "versionNonce": 1605883887,
       "isDeleted": false,
       "id": "iW349vWB-UwOuovr92QJ0",
       "fillStyle": "solid",
@@ -648,7 +648,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1701526634800,
+      "updated": 1701604800935,
       "link": null,
       "locked": false,
       "fontSize": 39.00599975585938,
@@ -659,7 +659,7 @@
       "containerId": null,
       "originalText": "TODO:\n1. use HERE's places api\n2. impl geo-fencing\n3. do the masking.",
       "lineHeight": 1.25,
-      "baseline": 183
+      "baseline": 179
     },
     {
       "type": "freedraw",
@@ -1039,8 +1039,8 @@
     },
     {
       "type": "text",
-      "version": 273,
-      "versionNonce": 1988799792,
+      "version": 274,
+      "versionNonce": 2051351169,
       "isDeleted": false,
       "id": "p_n50wIFghIGCgH2_wpso",
       "fillStyle": "solid",
@@ -1060,7 +1060,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1701526634801,
+      "updated": 1701604800937,
       "link": null,
       "locked": false,
       "fontSize": 36,
@@ -1071,7 +1071,7 @@
       "containerId": null,
       "originalText": "what do we need?\n1. we re going to use \nthe vector tile api to mask\nthe radar.\n2. geojson tool.\n3. HERE maps api to \nrender maps.\n3. mapbox api",
       "lineHeight": 1.25,
-      "baseline": 350
+      "baseline": 347
     },
     {
       "type": "freedraw",
@@ -1590,28 +1590,28 @@
       "pressures": []
     },
     {
-      "id": "WmWddabkJE_Q2UtAMKwYM",
       "type": "freedraw",
-      "x": 675.2220077514648,
-      "y": -24.00505828857422,
-      "width": 47.79376220703125,
-      "height": 39.600006103515625,
-      "angle": 0,
-      "strokeColor": "#2f9e44",
-      "backgroundColor": "transparent",
+      "version": 31,
+      "versionNonce": 145407440,
+      "isDeleted": false,
+      "id": "WmWddabkJE_Q2UtAMKwYM",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
       "roughness": 1,
       "opacity": 100,
+      "angle": 0,
+      "x": 675.2220077514648,
+      "y": -24.00505828857422,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "transparent",
+      "width": 47.79376220703125,
+      "height": 39.600006103515625,
+      "seed": 929659696,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 929659696,
-      "version": 31,
-      "versionNonce": 145407440,
-      "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1701526636369,
       "link": null,
       "locked": false,
@@ -1737,12 +1737,9 @@
           -15.037506103515625
         ]
       ],
-      "pressures": [],
+      "lastCommittedPoint": null,
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        47.79376220703125,
-        -15.037506103515625
-      ]
+      "pressures": []
     }
   ],
   "appState": {
