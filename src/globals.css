@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer utilities {
+    .common-container {
+        @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md: px-8 lg:p-14 custom-scrollbar;
+    }
+} */
+
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -37,8 +43,6 @@
     }
 
     .dark {
-        --background: 224 71% 4%;
-        --foreground: 213 31% 91%;
 
         --muted: 223 47% 11%;
         --muted-foreground: 215.4 16.3% 56.9%;
@@ -48,9 +52,6 @@
 
         --popover: 224 71% 4%;
         --popover-foreground: 215 20.2% 65.1%;
-
-        --border: 216 34% 17%;
-        --input: 216 34% 17%;
 
         --card: 224 71% 4%;
         --card-foreground: 213 31% 91%;
@@ -64,15 +65,13 @@
         --destructive: 0 63% 31%;
         --destructive-foreground: 210 40% 98%;
 
-        --ring: 216 34% 17%;
-
         --radius: 0.5rem;
     }
 }
 
 @layer base {
     * {
-        @apply border-border;
+        @apply box-border list-none p-0 m-0 scroll-smooth;
     }
 
     body {
