@@ -1,4 +1,5 @@
 import {vt2geojson} from '@mapbox/vt2geojson'
+import axios from 'axios'
 
 /* 
  TODO: 
