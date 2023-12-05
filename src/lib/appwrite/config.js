@@ -1,3 +1,7 @@
+/* 
+ NOTE: 
+ this is that web sdk for appwrite.
+*/
 import {
     Client,
     Account,

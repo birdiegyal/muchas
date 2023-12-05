@@ -17,23 +17,23 @@ export async function createUsrAc(usr) {
         // creating an user a/c in auth section.
         const fromUsrAc = await account.create(
             ID.unique(),
-            usr.email,
-            usr.passcode,
-            usr.name
+            usr.Email,
+            usr.Passcode,
+            usr.Usrname
         )
 
         // in this way we ensure that user didnt get away without creating his a/c on the platform.
         if (!fromUsrAc) throw Error
 
         // getting avatars using user's name initials because its a required attr for any user doc within the users coll.
-        const avatarUrl = avatars.getInitials(usr.name)
+        const avatarUrl = avatars.getInitials(usr.Usrname)
 
         // adding the user in usersColl
-        const newUser = await saveUserToDb({
+        const newUser = await saveUsrToDb({
             accountId: fromUsrAc.$id,
             email: fromUsrAc.email,
             Avatar: avatarUrl,
-            usrname: usr.usrname
+            usrname: usr.Usrname
         })
 
         return newUser
@@ -64,32 +64,6 @@ export async function signInAc(usr) {
     try {
         const userSession = await account.createEmailSession(usr.email, usr.passcode)
         return userSession
-    } catch (error) {
-        console.log(error)
-        return error
-    }
-}
-
-export async function getCurrentUsr() {
-    try {
-        // this the currently logged in usr.
-        const currentAc = await account.get()
-
-        if (!currentAc) throw Error
-
-
-        const currentUsr = await databases.listDocuments(
-            appwriteConfig.muchasDbId,
-            appwriteConfig.usrsCollId,
-            [Query.equal("accountId", currentAc.$id)]
-        )
-
-        if (!currentUsr) throw Error
-
-
-        // lets return the 1st user with matched attrs.
-        return currentUsr.documents[0]
-
     } catch (error) {
         console.log(error)
         return error

@@ -1,3 +1,6 @@
+/* fonts family: Quicksand */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,9 +54,9 @@
             13%,
             72%;
 
-        --accent: 201,
-            20%,
-            20%;
+        --accent: 133,
+            18%,
+            59%;
         --accent-foreground: 99,
             13%,
             52%;
@@ -77,15 +80,15 @@
         --destructive: 0 63% 31%;
         --destructive-foreground: 210 40% 98%;
 
-        --border: 165,
-            19%,
-            40%;
+        --border: 133,
+            18%,
+            59%;
         --input: 201,
             20%,
             36%;
-        --ring: 97,
-            13%,
-            80%;
+        --ring: 133,
+            18%,
+            59%;
         --radius: 0.5rem;
     }
 }
@@ -107,13 +110,60 @@
      here we're going to style them shadcn components as well components from formik.
     */
 
+    /* 
+     SECTION: 
+     TYPOGRAPHY
+    */
+    .thin {
+        @apply text-[18px] font-light leading-[140%] tracking-tighter;
+
+    }
+
+    .regular {
+        @apply text-[16px] font-medium leading-[140%];
+
+    }
+
+    .semibold {
+        @apply text-[20px] font-semibold leading-[140%] ;
+
+    }
+
+    .bold {
+        @apply text-[24px] font-bold leading-[140%] tracking-tighter;
+
+    }
+
+    .error-message{
+        @apply text-[#de022d] regular text-[10px] mx-2  text-center animate-fade-in; 
+    }
+
+    /* 
+     NOTE: 
+     to disable spin button of input elem type="number"
+    */
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
     .form-input {
-        @apply p-1 rounded-sm bg-input text-[20px] active:ring-2 mb-2 mx-2
+        @apply px-4 py-2 rounded-sm bg-input text-[20px] focus:ring-[4px] hover:ring-2  mx-2 outline-none thin
     }
 
     .form-button {
-        @apply bg-primary text-[20px] active:ring-2 mx-2
+        @apply bg-primary text-[20px] focus:ring-2 mx-2 bold mt-2
     }
+
+    .search-places {
+    @apply h-12 text-lg regular border-none placeholder:thin  focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
+    }
+
+
+
+    
 
 
 }
