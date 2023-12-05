@@ -43,15 +43,15 @@
         --background: 201,
             20%,
             23%;
-        --foreground: 97,
-            13%,
-            80%;
+        --foreground: 133,
+            18%,
+            59%;
 
-        --muted: 202,
-            20%,
-            32%;
-        --muted-foreground: 98,
-            13%,
+        --muted: 132,
+            17%,
+            72%;
+        --muted-foreground: 132,
+            17%,
             72%;
 
         --accent: 133,
@@ -158,12 +158,11 @@
     }
 
     .search-places {
-    @apply h-12 text-lg regular border-none placeholder:thin  focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
+    @apply h-12 text-lg regular backdrop-blur-3xl border-none placeholder:thin  focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
     }
 
-
-
-    
-
+    .map-container {
+    @apply w-full h-full
+    }
 
 }

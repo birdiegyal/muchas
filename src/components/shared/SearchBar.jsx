@@ -1,4 +1,4 @@
-import useAutoSuggestions from "@/hooks/useAutoSuggestions"
+
 import { Input } from "../ui/input"
 import { Search } from 'lucide-react'
 import { useState } from "react"
@@ -30,9 +30,9 @@ export default function SearchBar({setResults}) {
 
     }
     return (
-        <div className="flex gap-1 px-2 rounded-lg border-2 container sm:w-2/4">
-            <Search color="#cad2c5" size={30} className="self-center" />
-            <Input placeholder="search here..." type="text" className="search-places" value={usrQuery} onChange={handleChange}/>
+        <div className="flex gap-1 px-2 rounded-lg border-4 container sm:w-2/4 overflow-clip backdrop-blur-sm backdrop-brightness-50">
+            <Search color="#cad2c5" size={30} className="self-center " />
+            <Input placeholder="search here..." type="text" className="search-places bg-transparent" value={usrQuery} onChange={handleChange}/>
         </div>
     )
 

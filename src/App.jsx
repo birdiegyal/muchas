@@ -7,6 +7,7 @@ import Signup from './_auth/forms/Signup'
 import Signin from './_auth/forms/Signin'
 import Home from './_root/pages/Home'
 import RootLayout from './_root/RootLayout'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const App = () => {
   return (
