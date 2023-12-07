@@ -1,12 +1,9 @@
+/* fonts family: Quicksand */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* @layer utilities {
-    .common-container {
-        @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md: px-8 lg:p-14 custom-scrollbar;
-    }
-} */
 
 @layer base {
   :root {
@@ -43,20 +40,22 @@
   }
 
   .dark {
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
+    --background: 201, 20%, 23%;
+    --foreground: 133, 18%, 59%;
 
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 132, 17%, 72%;
+    --muted-foreground: 132, 17%, 72%;
+
+    --accent: 133, 18%, 59%;
+    --accent-foreground: 99, 13%, 52%;
 
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
 
-    --card: 224 71% 4%;
+    --card: 186, 21%, 40%;
     --card-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    --primary: 203, 21%, 12%;
 
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
@@ -64,6 +63,9 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
+    --border: 133, 18%, 59%;
+    --input: 201, 20%, 36%;
+    --ring: 133, 18%, 59%;
     --radius: 0.5rem;
   }
 }
@@ -76,5 +78,63 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* 
+     SECTION: 
+     here we're going to style them shadcn components as well components from formik.
+    */
+
+  /* 
+     SECTION: 
+     TYPOGRAPHY
+    */
+  .thin {
+    @apply text-[18px] font-light leading-[140%] tracking-tighter;
+  }
+
+  .regular {
+    @apply text-[16px] font-medium leading-[140%];
+  }
+
+  .semibold {
+    @apply text-[20px] font-semibold leading-[140%];
+  }
+
+  .bold {
+    @apply text-[24px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .error-message {
+    @apply text-[#de022d] regular text-[10px] mx-2  text-center animate-fade-in;
+  }
+
+  /* 
+     NOTE: 
+     to disable spin button of input elem type="number"
+    */
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .form-input {
+    @apply px-4 py-2 rounded-sm bg-input text-[20px] focus:ring-[4px] hover:ring-2  mx-2 outline-none thin;
+  }
+
+  .form-button {
+    @apply bg-primary text-[17px] focus:ring-2 mx-auto bold mt-2;
+  }
+
+  .search-places {
+    @apply h-12 text-lg regular backdrop-blur-3xl border-none placeholder:thin  focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
+  }
+
+  .map-container {
+    @apply w-full h-full;
   }
 }

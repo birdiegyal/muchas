@@ -24,19 +24,61 @@ module.exports = {
       },
     },
     extend: {
+
       /* 
        SECTION: 
        customize them colors as per your theme.
       */
-      colors: {
-        border: "#84a98c", //cambridge blue
-        input: "#101618", //4th down shade of charcoal
-        ring: "#52796F", //hooker's green
-        background: "#2F3E46", //charcoal
-        foreground: "#CAD2C5", //ash grey
-      },
 
-      fontFamily: {},
+      colors: {
+
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--foreground))",
+        },
+      },
+      borderRadius: {
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
+        sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+
+        // sans: ["var(--font-sans)", ...fontFamily.sans],
+        quicksand: ["Quicksand", 'sans-serif']
+
+
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -46,11 +88,24 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "in-out": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "shake-it": {
+          from :{transform: "translateX(-8px)"},
+          to: {form: "translateX(8px)"},
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "in-out 0.2s ease-in",
+        "alert": "shake-it 0.5s linear infinite"
       },
+      dropShadow: {
+        "md": "0px 0px 1px #fff"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -7,23 +7,23 @@ import { Link } from "react-router-dom";
 
 export default function ProfileForm() {
   return (
-    <div className="max-w-2xl mx-auto space-y-6 bg-background">
-      <Card>
-        <CardContent className="space-y-4">
-          <div className="flex items-center space-x-4">
-            <Avatar className="h-12 w-12">
+    <div className="min-h-screen mx-2.5 space-y-6 bg-background">
+      <Card className="max-w-2xl dark:bg-input boder-none mx-auto sm:max-w-lg md:max-w-lg">
+        <CardContent className="space-y-4 border-none">
+          <div className="flex items-center my-5">
+            <Avatar className="h-12 w-12 mr-4">
               <AvatarImage alt="User avatar" src="/placeholder-avatar.jpg" />
               <AvatarFallback>US</AvatarFallback>
             </Avatar>
             <div className="space-y-1">
-              <h2 className="text-2xl font-bold">Username</h2>
-              <div className="text-sm text-gray-500 dark:text-gray-400">
+              <h2 className="text-2xl text-white font-bold">Username</h2>
+              <div className="text-sm text-gray-300 dark:text-gray-400">
                 User123
               </div>
             </div>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+          <div className="space-y-2 text-white">
+            <Label htmlFor="email ">Email</Label>
             <Input
               disabled
               id="email"
@@ -33,9 +33,11 @@ export default function ProfileForm() {
           </div>
         </CardContent>
       </Card>
-      <Card>
+      <Card className="dark:bg-input">
         <CardHeader>
-          <CardTitle className="text-xl">Last Searched Place</CardTitle>
+          <CardTitle className="text-xl text-white">
+            Last Searched Place
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <img
@@ -50,9 +52,11 @@ export default function ProfileForm() {
           />
         </CardContent>
       </Card>
-      <Button className="w-full">Show on Map</Button>
+      <Button className="w-full bg-primary text-[20px] font-bold   mt-2  hover:bg-input hover:text-white">
+        Show on Map
+      </Button>
       <div className="text-center">
-        <Link className="text-blue-500 hover:underline" href="#">
+        <Link className="text-blue-500 hover:underline" to="/editprofile">
           Edit Profile
         </Link>
       </div>

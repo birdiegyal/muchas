@@ -1,52 +1,55 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export function RatingsCard() {
   return (
-    <div className="min-h-screen bg-white dark:bg-background">
-      <header className="bg-white dark:bg-input py-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen  max-w-2xl mx-auto sm:max-w-lg md:max-w-lg  space-y-6">
+      <header className="bg-white dark:bg-background py-2 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
           Reviews
         </h1>
-        <div className="mt-4 relative rounded-md shadow-sm">
+        {/* <div className="mt-4 relative rounded-md shadow-sm">
           <IconSearch className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
           <input
             className="focus:ring-black h-10 focus:border-border block w-full pl-10 sm:text-sm border-border rounded-md"
             placeholder="Search reviews"
             type="text"
-          />
-          <Button
+          /> */}
+        {/* <Button
             className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 mr-4 "
             variant="outline"
           >
             <IconFilter className="h-5 w-5" />
-          </Button>
-        </div>
+          </Button> */}
+        {/* </div> */}
       </header>
-      <main className="mt-6 mx-4 sm:mx-6 lg:mx-8">
+      <main className="mt-1 mx-4 sm:mx-6 lg:mx-8">
         <div className="space-y-6">
-          <div className="bg-white dark:bg-input shadow overflow-hidden sm:rounded-lg">
-            <div className="px-4 py-5 sm:px-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
+          <div className="bg-white dark:bg-input shadow overflow-hidden rounded-lg sm:rounded-lg">
+            <div className="px-4 py-5 sm:px-6 rounded">
+              <h3 className="text-lg leading-6 font-bold text-gray-900 dark:text-gray-100">
                 John Doe
               </h3>
               <div className="mt-2 max-w-xl text-sm text-gray-500">
                 <div className="flex items-center gap-1">
-                  <IconStar className="w-4 h-4 fill-primary" />
-                  <IconStar className="w-4 h-4 fill-primary" />
-                  <IconStar className="w-4 h-4 fill-primary" />
-                  <IconStar className="w-4 h-4 fill-primary" />
-                  <IconStar className="w-4 h-4 fill-primary" />
+                  <IconStar className="w-4 h-4 fill-white" />
+                  <IconStar className="w-4 h-4 fill-white" />
+                  <IconStar className="w-4 h-4 fill-white" />
+                  <IconStar className="w-4 h-4 fill-white" />
+                  <IconStar className="w-4 h-4 fill-white" />
                 </div>
-                <p>Amazing product! Highly recommend</p>
-                <p className="mt-2 text-right text-gray-500 text-xs">
+                <p className=" text-gray-100 ">
+                  Amazing product! Highly recommend
+                </p>
+                <p className="mt-2 text-right text-gray-100 text-xs">
                   September 4, 2023
                 </p>
               </div>
             </div>
-            <Button className="w-full py-2" variant="secondary">
-              Write a review
-            </Button>
           </div>
+          <Button className="form-button mt-5 w-full  hover:bg-input hover:text-white">
+            <Link to="/writereview">Write a review</Link>
+          </Button>
         </div>
       </main>
     </div>
