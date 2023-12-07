@@ -74,7 +74,7 @@ export async function getGeocode(addy) {
     addy = addy.replaceAll(" ", "+")
     const res = await axios.get(`${geocodeEndpoint}?q=${addy}&apiKey=${apiKey}`)
     // console.log(res.data.items[0].position)
-    return res.data.items[0].position
+    return res.data.items[0]?.position
 
     /* 
      NOTE: 

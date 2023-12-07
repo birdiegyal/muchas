@@ -24,6 +24,7 @@
     "lucide-react": "^0.294.0",
     "mapbox-gl": "^3.0.0",
     "react": "^18.2.0",
+    "react-advanced-click-away": "^2.1.7",
     "react-bootstrap-typeahead": "^6.3.2",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",

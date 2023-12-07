@@ -1,18 +1,23 @@
 import axios from "axios"
 import { getGeocode } from "@/lib/HERE/main"
+import { ClickAwayListener } from 'react-advanced-click-away';
 
-export default function SearchResults({ results, select }) {
+export default function SearchResults({ results, select, showModal, hideResults }) {
 
+    function handleClickAway() {
+        hideResults()
+    }
+    
     return (
-        <div>
+        <ClickAwayListener onClickAway={handleClickAway}>
             <ul className="rounded-2xl border-2 container sm:w-2/4 w-[90%] mt-2 overflow-scroll max-h-[200px] backdrop-blur-sm backdrop-brightness-75">
-                {results.map((result, i) => <SearchResult id={i} result={result} select={select} />)}
+                {results.map((result, i) => <SearchResult id={i} result={result} select={select} showModal={showModal}/>)}
             </ul>
-        </div>
+        </ClickAwayListener>
     )
 }
 
-function SearchResult({ result, id, select }) {
+function SearchResult({ result, id, select ,showModal}) {
 
     async function handleClick(e) {
         // console.log(select)
@@ -25,6 +30,7 @@ function SearchResult({ result, id, select }) {
                 state: { flyToLng: lng, flyToLat: lat }
             })
         }
+        showModal()
 
 
     }

@@ -38,7 +38,7 @@ export default function Home() {
     const [lng, setLng] = useState(null)
     const [lat, setLat] = useState(null)
     const [zoom, setZoom] = useState(2)
-    const [profileAppear, setProfileAppear] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     const [initState, dispatch] = useReducer(mapReducer, initArg)
 
@@ -110,7 +110,7 @@ export default function Home() {
                 zoom: 12,
                 duration: 7000
             })
-            setProfileAppear(true)
+            setShowModal(true)
         }
 
         const locator = navigator.geolocation.watchPosition(success, error, options)
@@ -121,11 +121,19 @@ export default function Home() {
 
     }, [initState])
 
+    function handleOpenModal(){
+        setShowModal(true)
+    }
+
+    function handleCloseModal(){
+        setShowModal(false)
+    }
+
     return (
         <div className='w-full h-full'>
-            <AsyncAutoSuggest select={dispatch} />
+            <AsyncAutoSuggest select={dispatch} showModal={handleOpenModal} />
             <div ref={mapContainer} className="map-container" />
-            {profileAppear && <ProfileCard />}
+            {showModal && (<ProfileCard closeModal={handleCloseModal}/>)}
         </div >
     )
 }

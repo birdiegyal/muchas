@@ -3,6 +3,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import SearchBar from "./SearchBar2"
 import SearchResults from "./SearchResults"
+
+
 const placesEndpoint = import.meta.env.VITE_HERE_PLACES_AUTOSUGGEST_ENDPOINT
 const apiKey = import.meta.env.VITE_HERE_API_KEY
 const delay = 1000
@@ -23,10 +25,11 @@ async function getSuggestions(placesEndpoint, apiKey, lat, long, query, setResul
 
 const debouncedSearch = debounce(getSuggestions, delay)
 
-export default function AsyncAutoSuggest({ select}) {
+export default function AsyncAutoSuggest({ select, showModal}) {
     const [results, setResults] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [location, setLocation] = useState({ lat: 21.169692263823002 , long: 79.14948942756396 });
+    const [showResults, setShowResults] = useState(false)
 
     useEffect(() => {
         
@@ -54,15 +57,21 @@ export default function AsyncAutoSuggest({ select}) {
             debouncedSearch.cancel()
             setResults([])
             setIsLoading(false)
+            
         }
         debouncedSearch(placesEndpoint, apiKey, lat, long, query, setResults, setIsLoading)
+        setShowResults(true)
 
+    }
+
+    function handleHideResults(){
+        setShowResults(false)
     }
 
     return (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 w-[90%] sm:w-1/2">
             <SearchBar onSearch={onSearch} isLoading={isLoading} />
-            {results.length > 0 && (<SearchResults select={select} results={results} />)}
+            {(results.length > 0 && showResults) && (<SearchResults select={select} results={results} showModal={showModal} hideResults={handleHideResults}/>)}
         </div>
     )
 }
