@@ -1,10 +1,19 @@
-import Error from "@/components/shared/Error";
-import { Button } from "@/components/ui/button";
-import { useUsrContext } from "@/contexts/AuthContext";
-import { useCreateUserAcMutation, useSignInAcMutation } from "@/lib/react-query/queriesAndMutations";
-import { Formik, Field, Form, ErrorMessage, useFormik } from 'formik';
-import { Link, useNavigate } from "react-router-dom";
-import * as Yup from "yup";
+import Error from "@/components/shared/Error"
+import { Button } from "@/components/ui/button"
+import { ErrorMessage, Field, Form, Formik } from "formik"
+import { Link } from "react-router-dom"
+import * as Yup from 'yup'
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+    SelectLabel,
+} from "@/components/ui/select"
+
+
 
 const schema = Yup.object().shape({
     Usrname: Yup
@@ -24,63 +33,20 @@ const schema = Yup.object().shape({
         .string()
         .required('Phone number is required.')
         .matches(/^\d{10}$/, 'Invalid phone number format.'),
+    locationType: Yup.string().required('Location type is required').oneOf(['currentLocation', 'address']),
+    currentLocation: Yup.array().when('locationType', {
+        is: 'currentLocation',
+        then: Yup.array().length(2).of(Yup.number().required('Latitude and longitude are required')),
+    }),
+    address: Yup.string().when('locationType', {
+        is: 'address',
+        then: Yup.string().required('Address is required').min(5).max(255),
+    }),
 })
 
-
-export default function Signup() {
-
-    // case: when usrs logged in
-    const { checkUsrAuth } = useUsrContext()
-    const navigate = useNavigate()
-
-    //  TODO: 
-    // case: when usrs signing up
-    const { mutateAsync: createUserAc, isPending: isCreatingUser } = useCreateUserAcMutation()
-
-    //  TODO: 
-    // case: when usrs signing in
-    const { mutateAsync: signinAc } = useSignInAcMutation()
-
-    //  FIXME: 
-    async function onSubmit(values) {
-        const newUser = await createUserAc(values)
-
-        if (!newUser) {
-            // toast({ title: "❌ signup failed ❌", })
-            return
-        }
-
-        const session = signinAc({
-            email: values.Email,
-            passcode: values.Passcode,
-        })
-
-        if (!session) {
-            /*            toast({
-                           title: "❌ signin failed ❌"
-                       }) */
-
-            return
-        }
-
-        const isUsrLoggedIn = await checkUsrAuth()
-        
-        if (isUsrLoggedIn) {
-            // toast({ title: "✅ sign in succeed ✅" })
-            // form.reset()
-            navigate("/")
-        } else {
-            /*             toast({
-                            title: "❌ signup failed. try logging in again ❌"
-                        }) */
-
-            return
-        }
-    }
-
-
+export default function MerchSignup() {
+    
     return (
-
         <Formik
             initialValues={{
                 Usrname: '',
@@ -93,36 +59,38 @@ export default function Signup() {
                 console.log(values)
                 await onSubmit(values)
                 // formikProps.handleReset()
-                setSubmitting(false);
+                setSubmitting(false)
 
 
             }}
         >
 
 
-            <Form className="flex flex-col w-full md:w-2/5 px-2">
+            <Form className="flex flex-col w-full container md:w-2/5 px-2">
 
 
                 <Field name="Usrname" type="text" placeholder="Usrname" className="form-input " id="Usrname" />
-                <div className="min-h-[22.39px]">
+                <div className="min-h-[23px]">
                     <ErrorMessage name="Usrname" render={Error} id="UsrnameErrorMessage" />
                 </div>
 
 
                 <Field name="Email" type="text" placeholder="Email" className="form-input" id="Email" />
-                <div className="min-h-[22.39px]">
+                <div className="min-h-[23px]">
                     <ErrorMessage name="Email" render={Error} id="EmailErrorMessage" />
                 </div>
 
 
                 <Field name="PhNo" type="number" placeholder="Phone number" className="form-input" id="PhNo" />
-                <div className="min-h-[22.39px]">
+                <div className="min-h-[23px]">
                     <ErrorMessage name="PhNo" render={Error} id="PhNoErrorMessage" />
                 </div>
 
+                <SelectDemo />
+
 
                 <Field name="Passcode" type="password" placeholder="Choose a new passcode" className="form-input" id="Passcode" />
-                <div className="min-h-[22.39px]">
+                <div className="min-h-[23px]">
                     <ErrorMessage name="Passcode" render={Error} id="PasscodeErrorMessage" />
                 </div>
 
@@ -143,11 +111,36 @@ export default function Signup() {
 
 /* 
  WORKFLOW: 
- 
- 1. usrname
- 2. email
- 3. phno
- 4. choose Passcode
-
+ 1. we'll add a select menu to choose a location type.
+ 2. validate the location entered 
+ 3. put it into our merchPtsColl
 */
 
+export function SelectDemo() {
+
+    function handleChange(value) {
+        switch (value) {
+            case "address":
+                // let him enter the addy.
+                return 'addy'
+            case "currentLocation":
+                // get the current location
+                return 'loc'
+        }
+    }
+
+    return (
+        <Select onValueChange={handleChange}>
+            <SelectTrigger className="mb-[23px] w-full bg-input text-[20px] focus:ring-[4px] hover:ring-2 outline-none ">
+                <SelectValue placeholder="use Current location" />
+            </SelectTrigger>
+            <SelectContent className=" self-center bg-secondary text-[24px] focus:ring-[4px] hover:ring-2 outline-none regular">
+                <SelectGroup>
+                    <SelectLabel>Enter location</SelectLabel>
+                    <SelectItem className=" focus:text-background " value="address">enter address</SelectItem>
+                    <SelectItem className=" focus:text-background " value="currentLocation">use Current location</SelectItem>
+                </SelectGroup>
+            </SelectContent>
+        </Select>
+    )
+}

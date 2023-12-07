@@ -1,4 +1,4 @@
-function latLngToTileTMS(latitude, longitude, zoom) {
+export function latLngToTileTMS(latitude, longitude, zoom) {
     // Convert latitude and longitude to radians
     const latRad = latitude * Math.PI / 180.0
 
@@ -14,4 +14,3 @@ function latLngToTileTMS(latitude, longitude, zoom) {
     return { x: tileX, y: tileY }
 }
 
-module.exports = latLngToTileTMS
