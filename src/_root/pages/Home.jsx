@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useReducer } from "react";
 import mapboxgl from "mapbox-gl";
 import AsyncAutoSuggest from "@/components/shared/AsyncAutoSuggest2";
 import ProfileCard from "@/components/shared/ProfileCard";
+import ProfileBtn from "@/components/shared/ProfileBtn";
 
 //  SECTION:  pass this access token to mapboxgl
 const mapboxAccessToken = import.meta.env.VITE_MAPBOX_TOKEN;
@@ -133,6 +134,7 @@ export default function Home() {
       <AsyncAutoSuggest select={dispatch} showModal={handleOpenModal} />
       <div ref={mapContainer} className="map-container" />
       {showModal && <ProfileCard closeModal={handleCloseModal} />}
+      <ProfileBtn />
     </div>
   );
 }

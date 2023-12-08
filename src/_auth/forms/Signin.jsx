@@ -79,7 +79,7 @@ export default function Signin() {
             }}
         >
 
-            <Form className="flex flex-col w-full md:w-2/5 px-2">
+            <Form className="flex flex-col w-full sm:w-2/3 px-2">
 
 
 

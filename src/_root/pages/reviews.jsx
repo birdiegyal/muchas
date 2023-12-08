@@ -1,12 +1,12 @@
 import { RatingsCard } from "@/components/shared/RatingsCard";
 import React from "react";
 
-const Reviews = () => {
+const Reviews = ({ ratings }) => {
   return (
-    <div className="max-w-2xl w-full  mx-auto">
-      <RatingsCard />
+    <div className="w-full  mx-auto">
+      {ratings.ratings.map((review, i) => { return <RatingsCard id={i} review = { review } />})}
     </div>
-  );
-};
+  )
+}
 
 export default Reviews;

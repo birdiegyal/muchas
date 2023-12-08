@@ -29,7 +29,6 @@ export default function OfferForm() {
 
                 }
 
-
                 const offerRes = await createOffer(offer)
             }
             function error(error){
@@ -42,7 +41,7 @@ export default function OfferForm() {
     return (
             <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4" >
 
-                <FileUploader setFieldValue={formik.setFieldValue}/>
+                <FileUploader name={"image"} setFieldValue={formik.setFieldValue}/>
                 
                 <Textarea name="offerDesc" onChange={formik.handleChange} value={formik.values.offerDesc} placeholder="enter your offer description"/>
 
