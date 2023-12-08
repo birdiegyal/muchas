@@ -34,8 +34,12 @@
     "react-advanced-click-away": "^2.1.7",
     "react-bootstrap-typeahead": "^6.3.2",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-hook-form": "^7.48.2",
     "react-mapbox-gl": "^5.1.1",
+=======
+    "react-dropzone": "^14.2.3",
+>>>>>>> 90f92f1 (day 7)
     "react-query": "^3.39.3",
     "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^6.20.1",

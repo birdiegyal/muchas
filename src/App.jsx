@@ -16,8 +16,16 @@ import Notfound from "./_root/pages/Notfound";
 import WriteReview from "./components/shared/WriteReview";
 import AddressInput from "./components/shared/AddressInput";
 // import AsyncAutoSuggest from './components/shared/AsyncAutoSuggest2'
+<<<<<<< HEAD
 import OnBoard from "./_auth/forms/OnBoard";
 import ProfileCard from "./components/shared/ProfileCard";
+=======
+import OnBoard from './_auth/forms/OnBoard'
+import AddressInput from './components/shared/AddyInput'
+import CreateOffer from './_root/pages/CreateOffer'
+
+
+>>>>>>> 90f92f1 (day 7)
 
 const App = () => {
   return (
@@ -36,15 +44,19 @@ const App = () => {
           {/* private routes */}
           <Route element={<RootLayout />}>
             <Route index element={<Home />} />
+<<<<<<< HEAD
             <Route path="/profile" element={<Profile />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/editprofile" element={<EditProfile />} />
             <Route path="/writereview" element={<WriteReview />} />
             <Route path="/addressinput" element={<AddressInput />} />
             <Route path="/allusers" element={<ProfileCard />} />
+=======
+            <Route path="/addy" element={<AddressInput />} />
+            <Route path="/createoffer" element={<CreateOffer />} />
+>>>>>>> 90f92f1 (day 7)
 
             {/* <Route path="/explore" element={<Explore />} />
-            <Route path="/updatepost/:id" element={<EditPost />} />
             <Route path="/posts/:id" element={<PostDetails />} />
             <Route path="/profile/:id/*" element={<Profile />} />
             <Route path="/updateprofile/:id" element={<UpdateProfile />} />
