@@ -1,4 +1,5 @@
 import Error from "@/components/shared/Error";
+import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
 import { useUsrContext } from "@/contexts/AuthContext";
 import { useSignInAcMutation } from "@/lib/react-query/queriesAndMutations";
@@ -93,7 +94,9 @@ export default function Signin() {
                     <ErrorMessage name="Passcode" render={Error} id="PasscodeErrorMessage" />
                 </div>
 
-                <Button type="submit" className="form-button">Signin</Button>
+                <Button type="submit" className="form-button">
+                    {isSigningIn && <Loader/>} Signin
+                </Button>
 
                 <p className="text-small-regular text-white text-center mt-2">
                     Don't have an account?

@@ -71,7 +71,8 @@ import { Link } from "react-router-dom";
 export default function ProfileCard({ closeModal }) {
   function handleClickAway() {
     // console.log("clicked outside!")
-    closeModal();
+    console.log(closeModal)
+    closeModal()
   }
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
@@ -129,12 +130,12 @@ export default function ProfileCard({ closeModal }) {
                 </table>
 
                 <div className="text-center py-0">
-                  <a
+                  <Link
                     className="text-[10px] text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-                    href="#"
+                    to={"/reviews"}
                   >
                     View Profile
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

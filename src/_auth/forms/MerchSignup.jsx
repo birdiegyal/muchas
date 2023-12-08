@@ -66,7 +66,7 @@ export default function MerchSignup() {
         >
 
 
-            <Form className="flex flex-col w-full container md:w-2/5 px-2">
+            <Form className="flex flex-col w-full container sm:w-3/4 px-2">
 
 
                 <Field name="Usrname" type="text" placeholder="Usrname" className="form-input " id="Usrname" />

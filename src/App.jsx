@@ -31,11 +31,11 @@ const App = () => {
           <Route element={<AuthLayout />} errorElement={<Notfound />}>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="*" element={<Notfound />} />
             <Route path="/onboard" element={<OnBoard />} />
+            <Route path="/merchsignup" element={<MerchSignup />} />
+            <Route path="*" element={<Notfound />} />
           </Route>
 
-          <Route path="/merchsignup" element={<MerchSignup />} />
           {/* private routes */}
           <Route element={<RootLayout />} errorElement={<Notfound />}>
             <Route index element={<Home />} />

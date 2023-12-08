@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query"
 
 import { QUERY_KEYS } from "./queryKeys"
-import { createUsrAc, signInAc, signOutAc } from "../appwrite/api"
+import { createOffer, createUsrAc, signInAc, signOutAc } from "../appwrite/api"
 
 // this'll create a mutation thats gonna be used by them components
 export function useCreateUserAcMutation() {
@@ -38,4 +38,8 @@ export function useSignOutAcMutation() {
     })
 }
 
-// export function 
+export function useCreateOfferMutation(){
+    return useMutation({
+        mutationFn: (offer) => createOffer(offer),
+    })
+}

@@ -270,7 +270,7 @@ export async function createOffer(offer) {
         if (!uploadedFile) throw Error
 
         // Get file url
-        const offerBannerUrl = getFilePreview(uploadedFile.$id)
+        const offerBannerUrl = [getFilePreview(uploadedFile.$id)]
         if (!offerBannerUrl) {
             
             await deleteFile(uploadedFile.$id)

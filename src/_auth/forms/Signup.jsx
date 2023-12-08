@@ -1,4 +1,5 @@
 import Error from "@/components/shared/Error";
+import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
 import { useUsrContext } from "@/contexts/AuthContext";
 import {
@@ -6,6 +7,7 @@ import {
   useSignInAcMutation,
 } from "@/lib/react-query/queriesAndMutations";
 import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
+
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
@@ -94,46 +96,48 @@ export default function Signup() {
         // formikProps.handleReset()
         setSubmitting(false);
       }}
-    >        
-            <Form className="flex flex-col w-full md:w-2/5 px-2">
+    >
+      <Form className="flex flex-col w-full md:w-2/5 px-2">
 
 
-                <Field name="Usrname" type="text" placeholder="Usrname" className="form-input " id="Usrname" />
-                <div className="min-h-[22.39px]">
-                    <ErrorMessage name="Usrname" render={Error} id="UsrnameErrorMessage" />
-                </div>
+        <Field name="Usrname" type="text" placeholder="Usrname" className="form-input " id="Usrname" />
+        <div className="min-h-[22.39px]">
+          <ErrorMessage name="Usrname" render={Error} id="UsrnameErrorMessage" />
+        </div>
 
 
-                <Field name="Email" type="text" placeholder="Email" className="form-input" id="Email" />
-                <div className="min-h-[22.39px]">
-                    <ErrorMessage name="Email" render={Error} id="EmailErrorMessage" />
-                </div>
+        <Field name="Email" type="text" placeholder="Email" className="form-input" id="Email" />
+        <div className="min-h-[22.39px]">
+          <ErrorMessage name="Email" render={Error} id="EmailErrorMessage" />
+        </div>
 
 
-                <Field name="PhNo" type="number" placeholder="Phone number" className="form-input" id="PhNo" />
-                <div className="min-h-[22.39px]">
-                    <ErrorMessage name="PhNo" render={Error} id="PhNoErrorMessage" />
-                </div>
+        <Field name="PhNo" type="number" placeholder="Phone number" className="form-input" id="PhNo" />
+        <div className="min-h-[22.39px]">
+          <ErrorMessage name="PhNo" render={Error} id="PhNoErrorMessage" />
+        </div>
 
 
-                <Field name="Passcode" type="password" placeholder="Choose a new passcode" className="form-input" id="Passcode" />
-                <div className="min-h-[22.39px]">
-                    <ErrorMessage name="Passcode" render={Error} id="PasscodeErrorMessage" />
-                </div>
+        <Field name="Passcode" type="password" placeholder="Choose a new passcode" className="form-input" id="Passcode" />
+        <div className="min-h-[22.39px]">
+          <ErrorMessage name="Passcode" render={Error} id="PasscodeErrorMessage" />
+        </div>
 
-                <Button type="submit" className="form-button">Signup</Button>
+        <Button type="submit" className="form-button">
+          {isCreatingUser && <Loader />}Signup
+        </Button>
 
-                <p className="text-small-regular text-white text-center mt-2">
-                    Already have an account?
-                    <Link
-                        to="/signin"
-                        className="text-primary-500 text-small-semibold ml-1">
-                        Sign in
-                    </Link>
-                </p>
-            </Form>
-        </Formik>
-    )
+        <p className="text-small-regular text-white text-center mt-2">
+          Already have an account?
+          <Link
+            to="/signin"
+            className="text-primary-500 text-small-semibold ml-1">
+            Sign in
+          </Link>
+        </p>
+      </Form>
+    </Formik>
+  )
 }
 
 /* 
