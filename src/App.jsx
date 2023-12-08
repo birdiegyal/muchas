@@ -15,18 +15,16 @@ import EditProfile from "./components/shared/EditProfile";
 import Notfound from "./_root/pages/Notfound";
 import WriteReview from "./components/shared/WriteReview";
 import AddressInput from "./components/shared/AddressInput";
-// import AsyncAutoSuggest from './components/shared/AsyncAutoSuggest2'
+import AsyncAutoSuggest from './components/shared/AsyncAutoSuggest2'
 import OnBoard from "./_auth/forms/OnBoard";
 import ProfileCard from "./components/shared/ProfileCard";
-import OnBoard from './_auth/forms/OnBoard'
-import AddressInput from './components/shared/AddyInput'
 import CreateOffer from './_root/pages/CreateOffer'
 
 
 
 const App = () => {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <main className="flex h-screen">
         <Routes>
           {/* public routes */}

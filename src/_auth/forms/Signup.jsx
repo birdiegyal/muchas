@@ -94,79 +94,7 @@ export default function Signup() {
         // formikProps.handleReset()
         setSubmitting(false);
       }}
-    >
-      <Form className="flex flex-col w-full md:w-2/5 px-2">
-        <Field
-          name="Usrname"
-          type="text"
-          placeholder="Usrname"
-          className="form-input "
-          id="Usrname"
-        />
-        <div className="min-h-[22.39px]">
-          <ErrorMessage
-            name="Usrname"
-            render={Error}
-            id="UsrnameErrorMessage"
-          />
-        </div>
-
-        <Field
-          name="Email"
-          type="text"
-          placeholder="Email"
-          className="form-input"
-          id="Email"
-        />
-        <div className="min-h-[22.39px]">
-          <ErrorMessage name="Email" render={Error} id="EmailErrorMessage" />
-        </div>
-
-        <Field
-          name="PhNo"
-          type="number"
-          placeholder="Phone number"
-          className="form-input"
-          id="PhNo"
-        />
-        <div className="min-h-[22.39px]">
-          <ErrorMessage name="PhNo" render={Error} id="PhNoErrorMessage" />
-        </div>
-
-        <Field
-          name="Passcode"
-          type="password"
-          placeholder="Choose a new passcode"
-          className="form-input"
-          id="Passcode"
-        />
-        <div className="min-h-[22.39px]">
-          <ErrorMessage
-            name="Passcode"
-            render={Error}
-            id="PasscodeErrorMessage"
-          />
-        </div>
-
-        <Button type="submit" className="form-button">
-          Signup
-        </Button>
-
-<<<<<<< HEAD
-        <p className="text-small-regular text-white text-center mt-2">
-          Already have an account?
-          <Link
-            to="/signin"
-            className="text-primary-500 text-small-semibold ml-1"
-          >
-            Sign in
-          </Link>
-        </p>
-      </Form>
-    </Formik>
-  );
-=======
-            
+    >        
             <Form className="flex flex-col w-full md:w-2/5 px-2">
 
 
@@ -206,7 +134,6 @@ export default function Signup() {
             </Form>
         </Formik>
     )
->>>>>>> 90f92f1 (day 7)
 }
 
 /* 

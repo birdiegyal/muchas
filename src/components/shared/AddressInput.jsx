@@ -31,10 +31,6 @@ const AddressInput = () => {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     console.log(latitude, longitude);
-    // Use the latitude and longitude to retrieve the address
-    // (You can use a geocoding service like Google Maps Geocoding API)
-    // const address = getAddressFromCoordinates(latitude, longitude);
-    // setManualAddress(address);
   };
 
   const showError = (error) => {

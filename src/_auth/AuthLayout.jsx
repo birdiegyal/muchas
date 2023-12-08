@@ -1,5 +1,6 @@
 import { Outlet, Navigate, Link } from "react-router-dom";
-import logo from "../assets/logo-muchas.png";
+import logo from "../../public/muchasLogo.png"
+
 
 const AuthLayout = () => {
   const isAuthenticated = false;
@@ -10,14 +11,13 @@ const AuthLayout = () => {
         <Navigate to="/" />
       ) : (
         <>
-          <div>
-            <Link
-              to="/signin"
-              className="flex w-screen justify-center items-start"
-            >
-              <img width={100} src={logo} alt="" />
-            </Link>
-            <section className="flex flex-1 justify-center items-center flex-col py-10">
+          <div className="m-auto">
+            <div className="w-full max-h-[20%]">
+              <img src={logo} alt="" />
+            </div>
+            <section className="flex flex-1 justify-center items-center flex-col ">
+
+
               <Outlet />
             </section>
           </div>
