@@ -12,7 +12,7 @@ import {
     SelectValue,
     SelectLabel,
 } from "@/components/ui/select"
-
+import AddressInput from "@/components/shared/AddressInput"
 
 
 const schema = Yup.object().shape({
@@ -86,7 +86,10 @@ export default function MerchSignup() {
                     <ErrorMessage name="PhNo" render={Error} id="PhNoErrorMessage" />
                 </div>
 
-                <SelectDemo />
+                {/* <SelectDemo /> */}
+                <div className="my-2">
+                <AddressInput />
+                </div>
 
 
                 <Field name="Passcode" type="password" placeholder="Choose a new passcode" className="form-input" id="Passcode" />

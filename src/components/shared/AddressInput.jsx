@@ -1,11 +1,16 @@
 import { Label } from "@radix-ui/react-label";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const AddressInput = () => {
   const [selectedOption, setSelectedOption] = useState(
     "choose to enter address"
   );
   const [manualAddress, setManualAddress] = useState("");
+  const locationRef = useRef(null);
+
+  useEffect(() => {
+    handleGetCurrentLocation();
+  }, []);
 
   const handleAddressOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -30,11 +35,9 @@ const AddressInput = () => {
   const showCurrentLocation = (position) => {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log(latitude, longitude);
-    // Use the latitude and longitude to retrieve the address
-    // (You can use a geocoding service like Google Maps Geocoding API)
-    // const address = getAddressFromCoordinates(latitude, longitude);
-    // setManualAddress(address);
+    locationRef.current = { latitude, longitude };
+
+    console.log("Current Location:", locationRef.current);
   };
 
   const showError = (error) => {
@@ -43,27 +46,27 @@ const AddressInput = () => {
 
   return (
     <>
-      <div className="min-h-screen  max-w-2xl mt-24 mx-auto sm:max-w-lg md:max-w-lg  space-y-6">
+      <div className=" w-[94%] space-y-6">
         <select
-          className="w-80 form-input  "
+          className="w-full form-input  "
           id="address-option"
           value={selectedOption}
           onChange={handleAddressOptionChange}
         >
-          <option value="manual-input">Enter Address Manually</option>
           <option value="current-location">Current Location</option>
+          <option value="manual-input">Enter Address Manually</option>
         </select>
         {selectedOption !== "manual-input" && (
           <p
             className="mx-auto text-center italic text-xs
         "
           >
-            Note: You are required to turn on your Location
+            Note: You are required to turn on your Location.
           </p>
         )}
 
         {selectedOption === "manual-input" && (
-          <div className="manual-address-container w-80 text-center mt-10">
+          <div className="manual-address-container w-full text-center mt-10">
             <Label htmlFor="manual-address" className="text-md ">
               Address
             </Label>
@@ -71,7 +74,7 @@ const AddressInput = () => {
               type="text"
               id="manual-address"
               value={manualAddress}
-              className="p-2 mt-2 w-full form-input"
+              className="p-2 mt-2 w-full form-input mx-auto"
               onChange={handleManualAddressChange}
               placeholder="Enter your complete address"
             />

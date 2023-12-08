@@ -15,13 +15,16 @@ import EditProfile from "./components/shared/EditProfile";
 import Notfound from "./_root/pages/Notfound";
 import WriteReview from "./components/shared/WriteReview";
 import AddressInput from "./components/shared/AddressInput";
-// import AsyncAutoSuggest from './components/shared/AsyncAutoSuggest2'
+import AsyncAutoSuggest from './components/shared/AsyncAutoSuggest2'
 import OnBoard from "./_auth/forms/OnBoard";
 import ProfileCard from "./components/shared/ProfileCard";
+import CreateOffer from './_root/pages/CreateOffer'
+
+
 
 const App = () => {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <main className="flex h-screen">
         <Routes>
           {/* public routes */}
@@ -42,9 +45,10 @@ const App = () => {
             <Route path="/writereview" element={<WriteReview />} />
             <Route path="/addressinput" element={<AddressInput />} />
             <Route path="/allusers" element={<ProfileCard />} />
+            <Route path="/addy" element={<AddressInput />} />
+            <Route path="/createoffer" element={<CreateOffer />} /> 
 
             {/* <Route path="/explore" element={<Explore />} />
-            <Route path="/updatepost/:id" element={<EditPost />} />
             <Route path="/posts/:id" element={<PostDetails />} />
             <Route path="/profile/:id/*" element={<Profile />} />
             <Route path="/updateprofile/:id" element={<UpdateProfile />} />
