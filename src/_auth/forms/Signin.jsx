@@ -14,9 +14,9 @@ const schema = Yup.object().shape({
         .email('Invalid email format.'),
     Passcode: Yup
         .string()
-        .required('Password is required.')
-        .min(8, 'Password must be at least 8 characters.')
-        .matches(/^(?=.*[a-zA-Z])(?=.*[0-9])/, 'Password must contain at least one digit, one letter, and one special character.'),
+        .required('Passcode is required.')
+        .min(8, 'Passcode must be at least 8 characters.')
+        .matches(/^(?=.*[a-zA-Z])(?=.*[0-9])/, 'Passcode must contain at least one digit, one letter, and one special character.'),
 
 })
 
@@ -98,7 +98,7 @@ export default function Signin() {
                 <p className="text-small-regular text-white text-center mt-2">
                     Don't have an account?
                     <Link
-                        to="/signup"
+                        to="/onboard"
                         className="text-primary-500 text-small-semibold ml-1">
                         Sign up
                     </Link>
@@ -112,7 +112,7 @@ export default function Signin() {
  WORKFLOW: 
  
  1. email
- 2. choose password
+ 2. choose Passcode
 
 */
 

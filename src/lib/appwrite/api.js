@@ -11,6 +11,7 @@ import {
     storage
 } from './config'
 
+
 export async function createUsrAc(usr) {
     try {
 
@@ -106,6 +107,7 @@ export async function getAccount() {
 
         return currentAc;
     } catch (error) {
+        
         console.log(error);
     }
 }

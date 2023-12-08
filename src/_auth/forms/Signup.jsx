@@ -17,11 +17,11 @@ const schema = Yup.object().shape({
     .required("Email is required.")
     .email("Invalid email format."),
   Passcode: Yup.string()
-    .required("Password is required.")
-    .min(8, "Password must be at least 8 characters.")
+    .required("Passcode is required.")
+    .min(8, "Passcode must be at least 8 characters.")
     .matches(
       /^(?=.*[a-zA-Z])(?=.*[0-9])/,
-      "Password must contain at least one digit, one letter, and one special character."
+      "Passcode must contain at least one digit, one letter, and one special character."
     ),
   PhNo: Yup.string()
     .required("Phone number is required.")
@@ -172,6 +172,6 @@ export default function Signup() {
  1. usrname
  2. email
  3. phno
- 4. choose password
+ 4. choose Passcode
 
 */

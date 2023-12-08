@@ -27,7 +27,7 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="max-w-2xl w-full mt-24 mx-2">
+    <div className="max-w-2xl w-full  mx-2">
       <h1 className="text-2xl font-bold mx-2 text-center my-5">Edit Profile</h1>
 
       <Formik
