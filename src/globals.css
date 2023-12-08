@@ -220,7 +220,7 @@
     }
 
     .popup {
-        @apply slide-in-from-bottom-2/3 slide-in-from-left-2/3 animate-in z-20 delay-200
+        @apply slide-in-from-bottom-2/3 slide-in-from-left-2/3 animate-in z-20 delay-200 overflow-scroll
     }
 
     .file_uploader-box {

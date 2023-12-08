@@ -28,25 +28,25 @@ const App = () => {
       <main className="flex h-screen">
         <Routes>
           {/* public routes */}
-          <Route element={<AuthLayout />}>
+          <Route element={<AuthLayout />} errorElement={<Notfound />}>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/404" element={<Notfound />} />
-            <Route path="/merchsignup" element={<MerchSignup />} />
+            <Route path="*" element={<Notfound />} />
             <Route path="/onboard" element={<OnBoard />} />
           </Route>
 
+          <Route path="/merchsignup" element={<MerchSignup />} />
           {/* private routes */}
-          <Route element={<RootLayout />}>
+          <Route element={<RootLayout />} errorElement={<Notfound />}>
             <Route index element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/editprofile" element={<EditProfile />} />
             <Route path="/writereview" element={<WriteReview />} />
-            <Route path="/addressinput" element={<AddressInput />} />
+
             <Route path="/allusers" element={<ProfileCard />} />
-            <Route path="/addy" element={<AddressInput />} />
-            <Route path="/createoffer" element={<CreateOffer />} /> 
+            {/* <Route path="/addy" element={<AddressInput />} /> */}
+            <Route path="/createoffer" element={<CreateOffer />} />
 
             {/* <Route path="/explore" element={<Explore />} />
             <Route path="/posts/:id" element={<PostDetails />} />
