@@ -1,68 +1,11 @@
-<<<<<<< HEAD
-/* fonts family: Quicksand */
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap");
-=======
 /* fonts family:Quicksand */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
->>>>>>> 90f92f1 (day 7)
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-<<<<<<< HEAD
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
-
-    --ring: 215 20.2% 65.1%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 201, 20%, 23%;
-    --foreground: 133, 18%, 59%;
-
-    --muted: 132, 17%, 72%;
-    --muted-foreground: 132, 17%, 72%;
-
-    --accent: 133, 18%, 59%;
-    --accent-foreground: 99, 13%, 52%;
-
-    --popover: 224 71% 4%;
-    --popover-foreground: 201, 20%, 23%;
-
-    --card: 186, 21%, 40%;
-    --card-foreground: 213 31% 91%;
-
-    --primary: 203, 21%, 12%;
-=======
     :root {
         --background:0 0% 100%;
         --foreground:222.2 47.4% 11.2%;
@@ -131,12 +74,10 @@
         --primary:203,
             21%,
             12%;
->>>>>>> 90f92f1 (day 7)
 
     --secondary: 165, 19%, 40%;
     --secondary-foreground: 210 40% 98%;
 
-<<<<<<< HEAD
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
@@ -145,27 +86,6 @@
     --ring: 133, 18%, 59%;
     --radius: 0.5rem;
   }
-=======
-        --secondary:165,
-            19%,
-            40%;
-        --secondary-foreground:210 40% 98%;
-
-        --destructive:0 63% 31%;
-        --destructive-foreground:210 40% 98%;
-
-        --border:133,
-            18%,
-            59%;
-        --input:201,
-            20%,
-            36%;
-        --ring:133,
-            18%,
-            59%;
-        --radius:0.5rem;
-    }
->>>>>>> 90f92f1 (day 7)
 }
 
 @layer base {
@@ -173,7 +93,6 @@
     @apply box-border list-none p-0 m-0 scroll-smooth;
   }
 
-<<<<<<< HEAD
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -188,7 +107,6 @@
 
   /* 
      SECTION: 
-=======
     body {
         @apply bg-background text-foreground;
         font-feature-settings:"rlig" 1, "calt" 1;
@@ -203,7 +121,6 @@
 
     /* 
      SECTION:
->>>>>>> 90f92f1 (day 7)
      TYPOGRAPHY
     */
   .thin {
@@ -222,7 +139,6 @@
     @apply text-[24px] font-bold leading-[140%] tracking-tighter;
   }
 
-<<<<<<< HEAD
   .error-message {
     @apply text-[#de022d] regular text-[10px] mx-2  text-center animate-fade-in;
   }
@@ -241,7 +157,6 @@
   .form-input {
     @apply px-4 py-2 rounded-sm bg-input text-[20px] focus:ring-[4px] hover:ring-2  mx-2 outline-none thin;
   }
-=======
     .semibold {
         @apply text-[20px] font-semibold leading-[140%];
 
@@ -280,13 +195,11 @@
     .form-input {
         @apply px-4 py-2 rounded-sm bg-input text-[20px] focus:ring-[4px] hover:ring-2 mx-2 outline-none font-thin
     }
->>>>>>> 90f92f1 (day 7)
 
   .form-button {
     @apply bg-primary text-[17px] focus:ring-2 mx-auto bold mt-2;
   }
 
-<<<<<<< HEAD
   .search-places {
     @apply h-12 text-lg regular backdrop-blur-3xl border-none placeholder:thin  focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
   }
@@ -294,7 +207,6 @@
   .map-container {
     @apply w-full h-full;
   }
-=======
     .search-places {
         @apply h-12 text-lg regular backdrop-blur-3xl border-none placeholder:font-thin focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
     }
@@ -323,7 +235,6 @@
               @apply h-80 lg:h-[480px] w-full rounded-[24px] object-cover object-top;
           }
 
->>>>>>> 90f92f1 (day 7)
 
   .loader {
     @apply mt-1 w-9 h-9 rounded-full inline-block border-t-2 border-r-2 border-r-transparent border-t-white animate-spin z-20;
