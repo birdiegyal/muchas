@@ -39,15 +39,15 @@ const AddressInput = () => {
 
   return (
     <>
-      <div className="min-h-screen  max-w-2xl mt-24 mx-auto sm:max-w-lg md:max-w-lg  space-y-6">
+      <div className=" w-full space-y-6">
         <select
-          className="w-80 form-input  "
+          className="w-full form-input  "
           id="address-option"
           value={selectedOption}
           onChange={handleAddressOptionChange}
         >
-          <option value="manual-input">Enter Address Manually</option>
           <option value="current-location">Current Location</option>
+          <option value="manual-input">Enter Address Manually</option>
         </select>
         {selectedOption !== "manual-input" && (
           <p
@@ -59,7 +59,7 @@ const AddressInput = () => {
         )}
 
         {selectedOption === "manual-input" && (
-          <div className="manual-address-container w-80 text-center mt-10">
+          <div className="manual-address-container w-full text-center mt-10">
             <Label htmlFor="manual-address" className="text-md ">
               Address
             </Label>

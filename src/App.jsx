@@ -46,7 +46,7 @@ const App = () => {
             <Route path="/addressinput" element={<AddressInput />} />
             <Route path="/allusers" element={<ProfileCard />} />
             <Route path="/addy" element={<AddressInput />} />
-            <Route path="/createoffer" element={<CreateOffer />} />
+            <Route path="/createoffer" element={<CreateOffer />} /> 
 
             {/* <Route path="/explore" element={<Explore />} />
             <Route path="/posts/:id" element={<PostDetails />} />

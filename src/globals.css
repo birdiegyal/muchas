@@ -192,7 +192,7 @@
 
 
 
-    .form-input {
+   .form-input {
         @apply px-4 py-2 rounded-sm bg-input text-[20px] focus:ring-[4px] hover:ring-2 mx-2 outline-none font-thin
     }
 
