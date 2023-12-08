@@ -39,7 +39,7 @@ const AddressInput = () => {
 
   return (
     <>
-      <div className=" w-full space-y-6">
+      <div className=" w-[96%] space-y-6">
         <select
           className="w-full form-input  "
           id="address-option"
