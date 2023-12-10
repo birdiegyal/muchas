@@ -133,7 +133,12 @@ export default function Home() {
     <div className="w-full h-full">
       <AsyncAutoSuggest select={dispatch} showModal={handleOpenModal} />
       <div ref={mapContainer} className="map-container" />
-      {showModal && <ProfileCard closeModal={handleCloseModal} />}
+      {showModal && (
+        <ProfileCard
+          className="transition-transform duration-100 ease-in-out"
+          closeModal={handleCloseModal}
+        />
+      )}
       <ProfileBtn />
     </div>
   );

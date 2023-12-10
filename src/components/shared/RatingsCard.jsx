@@ -1,35 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-export function RatingsCard({review}) {
-
+export function RatingsCard({ review }) {
   return (
     <div className="mx-auto sm:max-w-lg md:max-w-lg space-y-6 my-1">
       <main className="mt-1 mx-4 sm:mx-6 lg:mx-8">
         <div className="space-y-6">
-          <div className="bg-white dark:bg-input shadow overflow-hidden rounded-lg sm:rounded-lg">
+          <div className=" shadow overflow-hidden rounded-lg sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6 rounded">
               <h3 className="text-lg leading-6 font-bold text-gray-900 dark:text-gray-100">
                 {review.usrname}
               </h3>
               <div className="mt-2 max-w-xl text-sm text-gray-500">
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 my-2">
                   <IconStar className="w-4 h-4 fill-white" />
                   <IconStar className="w-4 h-4 fill-white" />
                   <IconStar className="w-4 h-4 fill-white" />
                   <IconStar className="w-4 h-4 fill-white" />
                   <IconStar className="w-4 h-4 fill-white" />
                 </div>
-                <p className=" text-gray-100 ">
-                  {review.reviewText}
-                </p>
+                <p className=" text-gray-100 italic ">{review.reviewText}</p>
                 <p className="mt-2 text-right text-gray-100 text-xs">
                   {review.time}
                 </p>
               </div>
             </div>
           </div>
-
         </div>
       </main>
     </div>

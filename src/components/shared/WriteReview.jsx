@@ -88,7 +88,7 @@ const WriteReview = () => {
         </Form>
       </Formik>
       <div className="text-center mt-5">
-        <Link className="text-blue-500 hover:underline" to="/reviews">
+        <Link className="text-blue-500 hover:underline" to="/profile">
           Back to Reviews
         </Link>
       </div>

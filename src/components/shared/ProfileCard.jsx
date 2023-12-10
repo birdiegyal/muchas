@@ -6,7 +6,7 @@ export default function ProfileCard({ closeModal }) {
   function handleClickAway() {
     // console.log("clicked outside!")
     // console.log(closeModal)
-    closeModal()
+    closeModal();
   }
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
@@ -75,8 +75,7 @@ export default function ProfileCard({ closeModal }) {
             </div>
           </div>
         </div>
-        </div>
-        
+      </div>
     </ClickAwayListener>
   );
 }
